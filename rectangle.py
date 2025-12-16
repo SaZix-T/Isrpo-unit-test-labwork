@@ -31,3 +31,10 @@ class RectangleTestCase(unittest.TestCase):
         res = perimeter(-5, -6)
         self.assertEqual(res, -11)
 
+    def test_real_inputs(self):
+        res = area(1.2, 2.3)
+        self.assertEqual(res, 2.76)
+
+        res = perimeter(1.2, 2.3)
+        self.assertEqual(res, 3.5)
+

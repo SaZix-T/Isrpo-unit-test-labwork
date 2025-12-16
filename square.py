@@ -50,3 +50,10 @@ class SquareTestCase(unittest.TestCase):
         res = perimeter(-6)
         self.assertEqual(res, -24)
 
+    def test_real_inputs(self):
+        res = area(1.2)
+        self.assertEqual(res, 1.44)
+
+        res = perimeter(1.2)
+        self.assertEqual(res, 4.8)
+

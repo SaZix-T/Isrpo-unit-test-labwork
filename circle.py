@@ -52,3 +52,10 @@ class TriangleTestCase(unittest.TestCase):
         res = perimeter(-6)
         self.assertEqual(res, -37.69911184307752)
 
+    def test_real_inputs(self):
+        res = area(1.2)
+        self.assertEqual(res, 4.523893421169302)
+
+        res = perimeter(1.2)
+        self.assertEqual(res, 7.5398223686155035)
+
