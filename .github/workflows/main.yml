@@ -10,22 +10,32 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Run tests on linux
-        run: |
-          python -m unittest circle.py
-          python -m unittest rectangle.py
-          python -m unittest square.py
-          python -m unittest triangle.py
+      - name: Run tests for circle.py on linux
+        run: python -m unittest circle.py
 
+      - name: Run tests for rectangle.py on linux
+        run: python -m unittest rectangle.py
+
+      - name: Run tests for square.py on linux
+        run: python -m unittest square.py
+
+      - name: Run tests for triangle.py on linux
+        run: python -m unittest triangle.py
+            
   windows_test:
     runs-on: windows-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Run tests on windows
-        run: |
-          python -m unittest circle.py
-          python -m unittest rectangle.py
-          python -m unittest square.py
-          python -m unittest triangle.py
+      - name: Run tests for circle.py on windows
+        run: python -m unittest circle.py
+
+      - name: Run tests for rectangle.py on windows
+        run: python -m unittest rectangle.py
+
+      - name: Run tests for square.py on windows
+        run: python -m unittest square.py
+
+      - name: Run tests for triangle.py on windows
+        run: python -m unittest triangle.py
