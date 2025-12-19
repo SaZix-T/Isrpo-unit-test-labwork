@@ -1,41 +1,27 @@
 name: CI
 on:
-    push:
-      branches: [ "main" ]
-      
+  push:
+    branches: [ "main" ]
+
 jobs:
-  linux_test:
-    runs-on: ubuntu-latest
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Run tests for circle.py on linux
+      - name: Run tests for circle.py on ${{ matrix.os }}
         run: python -m unittest circle.py
-
-      - name: Run tests for rectangle.py on linux
+        
+      - name: Run tests for rectangle.py on ${{ matrix.os }}
         run: python -m unittest rectangle.py
 
-      - name: Run tests for square.py on linux
+      - name: Run tests for square.py on ${{ matrix.os }}
         run: python -m unittest square.py
 
-      - name: Run tests for triangle.py on linux
-        run: python -m unittest triangle.py
-            
-  windows_test:
-    runs-on: windows-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: Run tests for circle.py on windows
-        run: python -m unittest circle.py
-
-      - name: Run tests for rectangle.py on windows
-        run: python -m unittest rectangle.py
-
-      - name: Run tests for square.py on windows
-        run: python -m unittest square.py
-
-      - name: Run tests for triangle.py on windows
+      - name: Run tests for triangle.py on ${{ matrix.os }}
         run: python -m unittest triangle.py
