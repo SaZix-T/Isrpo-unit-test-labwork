@@ -59,3 +59,4 @@ class TriangleTestCase(unittest.TestCase):
         res = perimeter(1.2)
         self.assertEqual(res, 7.5398223686155035)
 
+
